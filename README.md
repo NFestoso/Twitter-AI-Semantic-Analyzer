@@ -1,5 +1,5 @@
 # Twitter-Anlyzr
-Analys the emotional outcome of a specified Twitter handle or hashtag.
+Analys the emotional outcome of a specified Twitter handle or hashtag using Apple's CreateML AI model.
 
 ## Installation
 1. Install Xcode 10 or later.
