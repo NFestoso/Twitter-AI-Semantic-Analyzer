@@ -1,6 +1,6 @@
 # Twitter-Anlyzr
 Analys the emotional outcome of a specified Twitter handle or hashtag.
-![Example Image](https://github.com/NFestoso/Twitter-Anlyzr/tree/master/Twitter%20Anlyzr/Assets.xcassets/example1.png)
+![Example Image](Twitter-Anlyzr/master/Twitter Anlyzr/Assets.xcassets/example1.png)
 ![Example Image](https://github.com/NFestoso/Twitter-Anlyzr/tree/master/Twitter%20Anlyzr/Assets.xcassets/example2.png)
 
 ## Installation
