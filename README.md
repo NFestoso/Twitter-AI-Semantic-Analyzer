@@ -1,7 +1,7 @@
 # Twitter-Anlyzr
 Analys the emotional outcome of a specified Twitter handle or hashtag.
-![Example Image](example1.png)
-![Example Image](example2.png)
+![Example Image](./example1.png)
+![Example Image](./example2.png)
 
 ## Installation
 1. Install Xcode 10 or later.
