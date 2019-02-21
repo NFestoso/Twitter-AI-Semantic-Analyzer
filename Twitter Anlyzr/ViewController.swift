@@ -13,8 +13,11 @@ import SwiftyJSON
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    // Number of tweets to be analyzed
     private let tweetCount = 100
+    // CreateML Emotion analyzer
     private let sentimentClassifier = TweetSentimentClassifier()
+    // Twitter API keys
     private let swifter = Swifter(
         consumerKey: "zrEbjnYoKeSRFsqxFzGQ1p3xb",
         consumerSecret: "eR75qayqIWj6UgEhlGheOVGPWxof4voyl76iygrk0vrJ9fAzyk"
@@ -24,11 +27,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     
     
+    //MARK: - App Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
     }
     
+    
+    //MARK: - UI Methods
     
     @IBAction func analyzeButton(_ sender: Any) {
         if let search = textField.text {
@@ -36,6 +43,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func updateUI(with score: Int) {
+        if score > 20 {
+            self.emotionLabel.text = "😍"
+        } else if score > 10 {
+            self.emotionLabel.text = "😁"
+        } else if score > 2 {
+            self.emotionLabel.text = "🙂"
+        } else if score > -2 {
+            self.emotionLabel.text = "😐"
+        } else if score > -10 {
+            self.emotionLabel.text = "😕"
+        } else if score > -20 {
+            self.emotionLabel.text = "😡"
+        } else {
+            self.emotionLabel.text = "🤮"
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
+    //MARK: - AI Analysis Methods
     
     func fetchTweets(using search: String) {
         swifter.searchTweet(using: search, lang: "en", count: tweetCount, tweetMode: .extended, success: { (results, metadata) in
@@ -73,29 +105,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    func updateUI(with score: Int) {
-        if score > 20 {
-            self.emotionLabel.text = "😍"
-        } else if score > 10 {
-            self.emotionLabel.text = "😁"
-        } else if score > 2 {
-            self.emotionLabel.text = "🙂"
-        } else if score > -2 {
-            self.emotionLabel.text = "😐"
-        } else if score > -10 {
-            self.emotionLabel.text = "😕"
-        } else if score > -20 {
-            self.emotionLabel.text = "😡"
-        } else {
-            self.emotionLabel.text = "🤮"
-        }
-    }
-
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
 }
-
-
