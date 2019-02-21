@@ -1,7 +1,7 @@
 # Twitter-Anlyzr
 Analys the emotional outcome of a specified Twitter handle or hashtag.
-![Example Image](https://github.com/NFestoso/Twitter-Anlyzr/tree/master/Twitter%20Anlyzr/Assets.xcassets/example1.jpg)
-![Example Image](https://github.com/NFestoso/Twitter-Anlyzr/tree/master/Twitter%20Anlyzr/Assets.xcassets/example2.jpg)
+![Example Image](https://github.com/NFestoso/Twitter-Anlyzr/tree/master/Twitter%20Anlyzr/Assets.xcassets/example1.png)
+![Example Image](https://github.com/NFestoso/Twitter-Anlyzr/tree/master/Twitter%20Anlyzr/Assets.xcassets/example2.png)
 
 ## Installation
 1. Install Xcode 10 or later.
